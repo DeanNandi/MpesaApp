@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Display</title>
+</head>
+<body>
+
+<h1>Transaction List</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Merchant Request ID</th>
+            <th>Checkout Request ID</th>
+            <th>Result Code</th>
+            <th>Result Desc</th>
+            <th>Amount</th>
+            <th>Transaction ID</th>
+            <th>User Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.merchant_request_id }}</td>
+                <td>{{ transaction.checkout_request_id }}</td>
+                <td>{{ transaction.result_code }}</td>
+                <td>{{ transaction.result_desc }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.transaction_id }}</td>
+                <td>{{ transaction.user_phone_number }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
